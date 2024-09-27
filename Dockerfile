@@ -1,4 +1,4 @@
-FROM --platform=amd64 alpine:latest as builder
+FROM --platform=arm64 alpine:latest as builder
 
 WORKDIR /build
 
@@ -15,7 +15,7 @@ WORKDIR /opt/wol
 
 COPY --from=builder /build/wol .
 
-EXPOSE 3300
+EXPOSE 3301
 
 ENV RUST_LOG=info \
   RUST_BACKTRACE=1
